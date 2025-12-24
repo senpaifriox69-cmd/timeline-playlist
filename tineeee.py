@@ -165,13 +165,6 @@ for i, moment in enumerate(timeline):
         <div class="timeline-desc">{moment['description']}</div>
     </div>
     """, unsafe_allow_html=True)
-
-    st.components.v1.iframe(
-        moment["song"],
-        height=152,
-        scrolling=False,
-        key=f"spotify_{i}"
-    )
     st.divider()
 
 # ---------- Long Message ----------
@@ -184,3 +177,4 @@ I know this isn't much for a Christmas surprise, but I hope you like this.
 Eto na rin yung part 2 ng letter ko hehehe. ✨❄️
 </div>
 """, unsafe_allow_html=True)
+
