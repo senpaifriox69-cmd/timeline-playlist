@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Our Timeline",
+    page_title="Our Timeline"
     page_icon="🎧",
     layout="centered"
 )
@@ -56,19 +56,19 @@ st.caption("Thank You for being in my 2025 💘🥰")
 timeline = [
     {
         "title": "When I First Noticed My Feelings for You",
-        "description": "That moment when I knew I was going on a crazy ride.",
+        "description": "That moment when I knew I was going on a crazy ride. Never knew that I would start having these deep deep feelings for you.",
         "song": "https://open.spotify.com/embed/track/48CiA3IjkNZiyl6S6UbPCy",
         "image": "./image/WIFNMFY.jpg"
     },
     {
         "title": "When You Started to Matter More",
-        "description": "And I didn’t even realize I was falling for you.",
+        "description": "And I didn’t even realize I was falling for you. They told me that I fell deep into this rabbit hole of loving you",
         "song": "https://open.spotify.com/embed/track/06zLpakRZhozCnk3bZnGFT",
         "image": "./image/WYSMM.jpg"
     },
     {
         "title": "Our Sponty Galas",
-        "description": "Doing random things with no plans — cherishing every single moment.",
+        "description": "Doing random things with no plans — just us, enjoying every moment. Every time this happens, I find myself looking forward to whatever we’ll do next, as long as it’s with you.",
         "song": "https://open.spotify.com/embed/track/6t4CmQGucLORsKZF4M6NNC",
         "image": "./image/OURSPONTYGALAS.jpg"
     },
@@ -106,3 +106,4 @@ I know this isn't much for a Christmas surprise but I hope you like this.
 Eto na rin yung part 2 ng letter ko hehehe.
 </div>
 """, unsafe_allow_html=True)
+
