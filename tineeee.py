@@ -9,28 +9,27 @@ timeline = [
     {
         "title": "When I First Noticed My Feelings for You",
         "description": "That moment when everything feels so different.",
-        "song": "https://open.spotify.com/track/48CiA3IjkNZiyl6S6UbPCy?si=efccc71ac7f043d4"
+        "song": "https://youtu.be/izVXgdiTcQ8?si=atwtBskYK6Jwkk1h?start=32&end=66"
     },
     {   
         "title": "When You Started to Matter More",
         "description": "And I didn’t even realize it that I was falling for you.",
-        "song": "https://open.spotify.com/track/06zLpakRZhozCnk3bZnGFT?si=7b149526e57d404b?start=22"
-        
+        "song": "https:/https://youtu.be/KsbxOp496A4?si=L2cSXexbdClLegAl?start=20&end=73"
     },
     {
         "title": "Our Sponty Galas",
-        "description": "Doing random things without ",
-        "song": "https://open.spotify.com/track/6t4CmQGucLORsKZF4M6NNC?si=0b5d0cb5d2cd4939?start=42"
+        "description": "Doing random things without plans but loving every second of it.",
+        "song": "https://music.youtube.com/watch?v=bgCansrDpVo&si=i2XJAfktKYEWB4V-?start=42"
     },
     {
         "title": "Right Now",
         "description": "This is where my heart is.",
-        "song": "https://open.spotify.com/track/0kE1SmlJNLg14dgdo9kJws?si=cf0e99c76dfa42dc?start=174"
+        "song": "https://music.youtube.com/watch?v=GpQ63UI7mQc&si=NLTGa7hmgbirIwtr?start=206&end=236"
     }
 ]
 
 for moment in timeline:
     st.subheader(moment["title"])
     st.write(moment["description"])
-    st.components.v1.iframe(moment["song"], height=80)
+    st.components.v1.iframe(moment["song"], height=152)
     st.divider()
