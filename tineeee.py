@@ -50,7 +50,7 @@ body, .main {
     height: 100%;
     object-fit: cover;
     border-radius: 12px;
-    border: 2px dashed #d63384; /* optional cute border */
+    border: 2px dashed #d63384;
 }
 
 /* Spotify iframe */
@@ -73,25 +73,27 @@ iframe {
 </style>
 """, unsafe_allow_html=True)
 
+# ---------- Header ----------
 st.title("🎶 Our Timeline Playlist")
 st.caption("Thank You for being in my 2025 💘🥰")
 
+# ---------- Timeline Data (Google Drive images) ----------
 timeline = [
     {
         "title": "When I First Noticed My Feelings for You",
-        "description": "That moment when I knew I was going on a crazy ride. Never knew that I would start having these deep deep feelings for you. ",
+        "description": "That moment when I knew I was going on a crazy ride. Never knew that I would start having these deep deep feelings for you.",
         "song": "https://open.spotify.com/embed/track/48CiA3IjkNZiyl6S6UbPCy",
         "image": "https://drive.google.com/uc?export=view&id=13De-aKBa6DuwFY7SF8xk9npOb51V-D4K"
     },
     {
         "title": "When You Started to Matter More",
-        "description": "And I didn’t even realize I was falling for you. They told me that I fell deep into this rabbit hold of loving you",
+        "description": "And I didn’t even realize I was falling for you. They told me that I fell deep into this rabbit hole of loving you.",
         "song": "https://open.spotify.com/embed/track/06zLpakRZhozCnk3bZnGFT",
         "image": "https://drive.google.com/uc?export=view&id=1nUfCzD2YVDyuADJiZMcZnJUQqck4rZ6g"
     },
     {
         "title": "Our Sponty Galas",
-        "description": "Doing random things with no plans — cherishing every single moment. Everytime this happens, I would always look forward on what we're gonna be doing.",
+        "description": "Doing random things with no plans — cherishing every single moment. Everytime this happens, I would always look forward to what we're gonna be doing.",
         "song": "https://open.spotify.com/embed/track/6t4CmQGucLORsKZF4M6NNC",
         "image": "https://drive.google.com/uc?export=view&id=1gKV32uz1xuxHJ3FlQbO8gkCvQZQNWUva"
     },
@@ -103,6 +105,7 @@ timeline = [
     }
 ]
 
+# ---------- Timeline UI ----------
 for moment in timeline:
     st.markdown(f"""
     <div class="timeline-card">
@@ -126,8 +129,5 @@ st.markdown("## 💌 Merry Christmas to mi Favorite Girl 🎄💖")
 st.markdown("""
 <div class="long-message">
 HELLOOO MERRY CHRISTMAS TO YOU MI FAVORITE GIRL, I know this isn't much for a Christmas surprise but I hope you like this. Eto na rin yung part 2 ng letter ko hehehe.
-
 </div>
 """, unsafe_allow_html=True)
-
-
