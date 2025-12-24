@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Our Timeline"
+    page_title="Our Timeline",
     page_icon="🎧",
     layout="centered"
 )
@@ -106,4 +106,5 @@ I know this isn't much for a Christmas surprise but I hope you like this.
 Eto na rin yung part 2 ng letter ko hehehe.
 </div>
 """, unsafe_allow_html=True)
+
 
