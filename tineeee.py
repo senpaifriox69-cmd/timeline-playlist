@@ -7,71 +7,76 @@ st.set_page_config(
     layout="centered"
 )
 
+# ---------- Custom CSS ----------
 st.markdown("""
 <style>
 /* Body background */
 body, .main {
-    background-color: #fff0f5; /* pastel pink */
+    background: linear-gradient(135deg, #ffe0f0, #ffd6e0);
     font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #222;
     overflow-x: hidden;
 }
 
 /* Timeline cards */
 .timeline-card {
-    background: linear-gradient(145deg, #ffd6e0, #ffe0f0);
+    background: linear-gradient(145deg, #ffb6c1, #ffc0cb);
     padding: 1.8rem;
     border-radius: 20px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     position: relative;
-    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
 }
-.timeline-card:hover {
-    transform: scale(1.03);
+.timeline-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Card decorations */
+.timeline-card::after {
+    content: "✨🎄❄️";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
 }
 
 /* Titles & descriptions */
 .timeline-title {
     font-size: 1.5rem;
     font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 .timeline-desc {
-    color: #333333;
-    margin-top: 0.5rem;
     font-size: 1.1rem;
 }
 
 /* Spotify iframe */
 iframe {
-    border-radius: 18px;
+    border-radius: 16px;
     border: 2px dashed #ff69b4;
     margin-top: 0.8rem;
 }
 
 /* Long message section */
 .long-message {
-    background: linear-gradient(145deg, #caffbf, #9bf6ff);
-    padding: 2.2rem;
+    background: linear-gradient(145deg, #ffe6f0, #ffccd9);
+    padding: 2rem;
     border-radius: 25px;
     font-size: 1.15rem;
-    line-height: 1.75;
+    line-height: 1.7;
     margin-top: 2rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     opacity: 0;
-    animation: fadeIn 2s forwards;
-    animation-delay: 0.5s;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
 }
-
-/* Divider */
-.stDivider {
-    border-top: 2px dashed #ff69b4;
-    margin: 1.5rem 0;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.long-message.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Floating hearts */
@@ -80,31 +85,16 @@ iframe {
     font-size: 20px;
     color: #ff69b4;
     animation: floatUp 6s linear infinite;
+    z-index: 9999;
 }
 @keyframes floatUp {
     0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 1; }
     100% { transform: translateY(-10vh) translateX(50px) rotate(360deg); opacity: 0; }
 }
-
-/* Snowflakes */
-.snowflake {
-    position: fixed;
-    top: -10px;
-    color: #fff;
-    font-size: 1em;
-    z-index: 9999;
-    user-select: none;
-    pointer-events: none;
-    animation: fall linear infinite;
-}
-@keyframes fall {
-    0% { transform: translateY(0) translateX(0); opacity: 1; }
-    100% { transform: translateY(110vh) translateX(50px); opacity: 0; }
-}
 </style>
 """, unsafe_allow_html=True)
 
-# ---------- Animated Floating Hearts + Snow ----------
+# ---------- Animated Hearts + Scroll Reveal ----------
 components.html("""
 <script>
 // Floating hearts
@@ -119,40 +109,45 @@ function createHeart() {
 }
 setInterval(createHeart, 500);
 
-// Snowflakes
-function createSnow() {
-    var snow = document.createElement('div');
-    snow.className = 'snowflake';
-    snow.style.left = Math.random() * window.innerWidth + 'px';
-    snow.style.fontSize = (10 + Math.random() * 20) + 'px';
-    snow.style.animationDuration = (5 + Math.random() * 5) + 's';
-    snow.innerHTML = '❄️';
-    document.body.appendChild(snow);
-    setTimeout(() => { snow.remove(); }, 10000);
+// Scroll reveal for cards
+function revealOnScroll() {
+    const cards = document.querySelectorAll('.timeline-card');
+    const longMessage = document.querySelector('.long-message');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+    if(longMessage) observer.observe(longMessage);
 }
-setInterval(createSnow, 300);
+document.addEventListener('DOMContentLoaded', revealOnScroll);
 </script>
 """, height=0)
 
 # ---------- Header ----------
 st.title("🎶 Our Timeline Playlist")
-st.caption("Moments, music, and feelings — sprinkled with a little magic ✨")
+st.caption("Moments, music, and feelings — sprinkled with a little Christmas magic ✨🎄")
 
 # ---------- Timeline Data ----------
 timeline = [
     {
         "title": "💘 When I First Noticed My Feelings for You 💘",
-        "description": "That moment when everything suddenly felt so different 😳.",
+        "description": "That moment when I knew I was going on a crazy ride 😳.",
         "song": "https://open.spotify.com/embed/track/48CiA3IjkNZiyl6S6UbPCy"
     },
     {
         "title": "🎯 When You Started to Matter More",
-        "description": "I didn’t even realize I was falling for you 🥰.",
+        "description": "And I didn’t even realize I was falling for you 🥰.",
         "song": "https://open.spotify.com/embed/track/06zLpakRZhozCnk3bZnGFT"
     },
     {
         "title": "🎉 Our Sponty Galas",
-        "description": "No plans, just us. Loving every second 😎.",
+        "description": "Doing random things with no plans — cherishing every single moment 😎",
         "song": "https://open.spotify.com/embed/track/6t4CmQGucLORsKZF4M6NNC"
     },
     {
@@ -168,7 +163,6 @@ for i, moment in enumerate(timeline):
     <div class="timeline-card">
         <div class="timeline-title">{moment['title']}</div>
         <div class="timeline-desc">{moment['description']}</div>
-        <img src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" width="40" style="margin-top:0.5rem;">
     </div>
     """, unsafe_allow_html=True)
 
@@ -180,22 +174,13 @@ for i, moment in enumerate(timeline):
     )
     st.divider()
 
-# ---------- Long Message Section ----------
+# ---------- Long Message ----------
 st.markdown("## 💌 Merry Christmas to My Favorite Girl")
 
 st.markdown("""
 <div class="long-message">
-I don’t know when exactly this turned into something real —  
-maybe it was slow, maybe it was sudden —  
-but somewhere between the laughs, the silence, and the random moments,  
-you became someone I carry with me.
-
-These aren’t full songs — just the parts that stayed with me.  
-The moments I replayed in my head, even when the music stopped.
-
-If you ever wonder where you stand,  
-this is my answer —  
-right here, right now 💖✨
+HELLOOO MERRY CHRISTMAS TO YOU MI FAVORITE GIRL! 🎄💖  
+I know this isn't much for a Christmas surprise, but I hope you like this.  
+Eto na rin yung part 2 ng letter ko hehehe. ✨❄️
 </div>
 """, unsafe_allow_html=True)
-
