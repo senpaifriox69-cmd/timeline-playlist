@@ -81,7 +81,7 @@ timeline = [
         "title": "When I First Noticed My Feelings for You",
         "description": "That moment when I knew I was going on a crazy ride. Never knew that I would start having these deep deep feelings for you. ",
         "song": "https://open.spotify.com/embed/track/48CiA3IjkNZiyl6S6UbPCy",
-        "image": "https://drive.google.com/uc?export=view&id=13De-aKBa6DuwFY7SF8xk9npOb51V-D4K
+        "image": "https://drive.google.com/uc?export=view&id=13De-aKBa6DuwFY7SF8xk9npOb51V-D4K"
     },
     {
         "title": "When You Started to Matter More",
@@ -129,4 +129,5 @@ HELLOOO MERRY CHRISTMAS TO YOU MI FAVORITE GIRL, I know this isn't much for a Ch
 
 </div>
 """, unsafe_allow_html=True)
+
 
