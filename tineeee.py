@@ -103,6 +103,7 @@ st.markdown("""
 <div class="long-message">
 HELLOOO MERRY CHRISTMAS TO YOU MI FAVORITE GIRL 💖. I know this isn't much of a Christmas surprise but I hope you like this. Eto na rin yung part 2 ng letter ko hehehe because you deserve more than 1 part of a letter. I feel like mauubos writing juice ko dito but if it's for you then okay lang.
 
+
 I had one of if not the best year of my life, especially because you were in it. There are days when I randomly remember our moments, even the smallest ones, I catch myself smiling like an idiot. Even tho sobrang simple lang ng mga nangyari, as long as it’s with you, it replays my over and over again na para bang movie scene. The way you laugh, the way you smile, the way you react pag like I have surprises for you—those little things stayed with me more than I expected it to be. Sometimes I realize that you aren’t just a random passerby in my life; you’re someone who loudly settled in my life and especially in my heart and mind.
 
 You became my “I wish you were here” person. Whenever something funny happens, or I see something that I knew you would like, or I experience anything even slightly interesting, my first thought is always “Sana andito ka sa tabi ko” or “I will make kwento it to Tine later.” And that’s when I knew it was different—because not everyone becomes the person I want to share my day with by default and yet nagging ikaw yun (grabe ang galing mo talaga). Kaya nga nung hindi tayo nagusap ng 1 month andami kong kwento sayo kasi I really want to share it with you, because I wanted you to be by my side that time.
@@ -123,6 +124,7 @@ Merry Christmas again, my favorite girl, and sa family mo. Thank you for being t
 
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
