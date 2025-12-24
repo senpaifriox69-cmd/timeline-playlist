@@ -166,6 +166,12 @@ for i, moment in enumerate(timeline):
     </div>
     """, unsafe_allow_html=True)
     st.divider()
+    
+    st.components.v1.iframe(
+        moment["song"],
+        height=152,
+        scrolling=False
+    )
 
 # ---------- Long Message ----------
 st.markdown("## 💌 Merry Christmas to My Favorite Girl")
@@ -177,4 +183,5 @@ I know this isn't much for a Christmas surprise, but I hope you like this.
 Eto na rin yung part 2 ng letter ko hehehe. ✨❄️
 </div>
 """, unsafe_allow_html=True)
+
 
