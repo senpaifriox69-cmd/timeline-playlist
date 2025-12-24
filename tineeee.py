@@ -7,7 +7,6 @@ st.set_page_config(
     layout="centered"
 )
 
-# ---------- Custom CSS + Animations ----------
 st.markdown("""
 <style>
 /* Body background */
@@ -149,17 +148,17 @@ timeline = [
     {
         "title": "🎯 When You Started to Matter More",
         "description": "I didn’t even realize I was falling for you 🥰.",
-        "song": "https://open.spotify.com/embed/track/06zLpakRZhozCnk3bZnGFT?start=22"
+        "song": "https://open.spotify.com/embed/track/06zLpakRZhozCnk3bZnGFT"
     },
     {
         "title": "🎉 Our Sponty Galas",
         "description": "No plans, just us. Loving every second 😎.",
-        "song": "https://open.spotify.com/embed/track/6t4CmQGucLORsKZF4M6NNC?start=42"
+        "song": "https://open.spotify.com/embed/track/6t4CmQGucLORsKZF4M6NNC"
     },
     {
         "title": "💖 Right Now",
         "description": "This is where my heart is 💌.",
-        "song": "https://open.spotify.com/embed/track/0kE1SmlJNLg14dgdo9kJws?start=174"
+        "song": "https://open.spotify.com/embed/track/0kE1SmlJNLg14dgdo9kJws"
     }
 ]
 
@@ -199,3 +198,4 @@ this is my answer —
 right here, right now 💖✨
 </div>
 """, unsafe_allow_html=True)
+
